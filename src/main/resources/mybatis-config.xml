@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--引入数据库的配置文件-->
+    <properties resource="jdbc-mysql.properties"></properties>
+    <!--指定别名,再到映射文件中使用别名-->
+    <typeAliases>
+        <typeAlias type="yantang.pojo.Student" alias="Student"></typeAlias>
+    </typeAliases>
+    <!--环境配置-->
+    <environments default="MyBatisDome">
+        <environment id="MyBatisDome">
+            <transactionManager type="JDBC"/>
+            <!--数据库连接-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--添加映射文件-->
+    <mappers>
+        <mapper resource="mapper/StudentMapper.xml"/>
+    </mappers>
+</configuration>
