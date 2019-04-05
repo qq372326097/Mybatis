@@ -5,49 +5,49 @@ import java.util.Date;
 
 public class Student {
 
-    private int s_id;
-    private String s_name;
+    private int id;
+    private String name;
     //    出日期
-    private Date s_birth;
+    private Date birth;
     //    性别
-   private String s_sex;
+   private String sex;
 
-    public int getS_id() {
-        return s_id;
+    public int getId() {
+        return id;
     }
 
-    public void setS_id(int s_id) {
-        this.s_id = s_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getS_name() {
-        return s_name;
+    public String getName() {
+        return name;
     }
 
-    public void setS_name(String s_name) {
-        this.s_name = s_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getS_birth() {
-        return s_birth;
+    public Date getBirth() {
+        return birth;
     }
 
-    public void setS_birth(Date s_birth) {
-        this.s_birth = s_birth;
+    public void setBirth(Date birth) {
+        this.birth = birth;
     }
 
-    public String getS_sex() {
-        return s_sex;
+    public String getSex() {
+        return sex;
     }
 
-    public void setS_sex(String s_sex) {
-        this.s_sex = s_sex;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public Student(String s_name, Date s_birth, String s_sex) {
-        this.s_name = s_name;
-        this.s_birth = s_birth;
-        this.s_sex = s_sex;
+    public Student(String name, Date birth, String sex) {
+        this.name = name;
+        this.birth = birth;
+        this.sex = sex;
     }
 
     public Student() {

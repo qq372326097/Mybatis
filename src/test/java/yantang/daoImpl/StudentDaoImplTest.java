@@ -24,7 +24,7 @@ public class StudentDaoImplTest {
     public void updateStudent() throws Exception {
         Student student = new Student("赵雷",new SimpleDateFormat("yyyy-MM-dd").parse("1992-06-27"),"男");
         //需指明ID也就是where后面的参数，否则更新不成功
-        student.setS_id(1);
+        student.setId(1);
         studentDaoImpl.updateStudent(student);
     }
 
@@ -32,7 +32,7 @@ public class StudentDaoImplTest {
     public void findById() throws Exception {
         Student student = null;
         student = studentDaoImpl.findById(1);
-        System.out.print("ID = "+student.getS_id()+",name = "+student.getS_name()+",birth"+student.getS_birth()+",sex = "+student.getS_sex());
+        System.out.print("ID = "+student.getId()+",name = "+student.getName()+",birth"+student.getName()+",sex = "+student.getSex());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class StudentDaoImplTest {
         List<Student> students = null;
         students = studentDaoImpl.findAll();
         for (Student student : students) {
-            System.out.print("ID = "+student.getS_id()+",name = "+student.getS_name()+",birth"+student.getS_birth()+",sex = "+student.getS_sex());
+            System.out.print("ID = "+student.getId()+",name = "+student.getName()+",birth"+student.getName()+",sex = "+student.getSex());
             System.out.print("\r\n");
         }
     }
@@ -50,7 +50,7 @@ public class StudentDaoImplTest {
         List<Student> students = null;
         students = studentDaoImpl.findAllLike("李");
         for (Student student : students) {
-            System.out.print("ID = "+student.getS_id()+",name = "+student.getS_name()+",birth"+student.getS_birth()+",sex = "+student.getS_sex());
+            System.out.print("ID = "+student.getId()+",name = "+student.getName()+",birth"+student.getName()+",sex = "+student.getSex());
             System.out.print("\r\n");
         }
     }

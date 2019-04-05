@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="yantang">
+<mapper namespace="Student">
     <!--关系映射将POJO类中的属性映射为表中的字段-->
-    <!--<resultMap id="StudentMap" type="Student">
+    <resultMap type="Student" id="StudentMapper">
         <id column="s_id" property="id"></id>
         <result column="s_name" property="name"></result>
         <result column="s_birth" property="birth"></result>
         <result column="s_sex" property="sex"></result>
-    </resultMap>-->
+    </resultMap>
     <!--id ="接口中的方法名",parameterType="传入的参数类型",resultType = "返回实体类对象，使用包.类名"-->
     <insert id="addStudent">
         insert into Student(s_name,s_birth,s_sex) VALUES(#{s_name},#{s_birth},#{s_sex})
     </insert>
     <delete id="deleteStudent">
-        delete from student where s_id = #{s_id}
+        delete from student where s_id = #{id}
     </delete>
     <update id="updateStudent">
         update  student set s_name = #{s_name},s_birth = #{s_birth},s_sex = #{s_sex} where s_id = #{s_id}
     </update>
-    <select id="findById" resultType="Student">
-        select * from student where s_id = #{s_id}
+    <select id="findById" resultMap="StudentMapper">
+        select s_id,s_name,s_birth,s_sex from student where s_id = #{id}
     </select>
-    <select id="findAll" resultType="Student">
-        select * from student
+    <select id="findAll" resultMap="StudentMapper">
+        select s_id,s_name,s_birth,s_sex from student
     </select>
-    <select id="findAllLike" resultType="Student">
-        select * from student where s_name like "%"#{s_name}"%"
+    <select id="findAllLike" resultMap="StudentMapper">
+        select s_id,s_name,s_birth,s_sex from student where s_name like "%"#{s_name}"%"
     </select>
 </mapper>
